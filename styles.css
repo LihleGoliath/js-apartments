@@ -1,0 +1,12 @@
+
+body{
+    position: relative;
+    overflow-x: hidden;
+}
+.searcharea{
+    position: absolute;
+    top:700px;
+   
+   
+    z-index: 3;
+}
