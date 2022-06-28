@@ -3,9 +3,94 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="styles.css">
     <title>Document</title>
 </head>
-<body>
-    
+<body id="body">
+    <section id="propertiespage" class="py-5"   >
+<div class="container-fluid m-auto text-white text-center py-3" style="height:fit-content ;z-index: 100;" id="propertiesList">
+    <h1 class="my-3">Properties</h1>
+    <form class="container bg-light shadow p-3 d-flex mb-3" style="width: fit-content;height: fit-content;" >
+    <div>
+        <h6>Location</h6>
+                <select name="location" id="location" class="form-select select-sm me-2" style="width: fit-content;">
+                    <option value="All_Cites" >All Cites</option>
+                    <option value="New_York" >New York</option>
+                    <option value="London" >London</option>
+                    <option value="Cape_town" >Cape town</option>
+                </select>
+            </div>
+            <div>
+                <h6>Bedrooms</h6>
+                <select name="bedrooms" id="bedrooms" class="form-select select-sm me-2" style="width: fit-content;">
+                    <option value="Bedrooms">Bedrooms</option>
+                    <option value="1-5">1-5</option>
+                    <option value="5-10">5-10</option>
+                    <option value="10-15">10-15</option>
+                </select>
+            </div>
+        <div>
+                <h6>Price</h6>
+                <select name="Price" id="Price" class="form-select select-sm me-2" style="width: fit-content;">
+                    <option value="Max.Price">Max.Price</option>
+                    <option value="5000">5000</option>
+                    <option value="2000">2000</option>
+                    <option value="1000">1000</option>
+                </select>
+            </div>
+            <div>
+                <h6>Status</h6>
+                <select name="Status" id="Status" class="form-select select-sm me-2" style="width: fit-content;">
+                    <option value="All-Status">All Status</option>
+                    <option value="Rent">Rent</option>
+                    <option value="Sale">Sale</option>
+                </select>
+            </div>
+            <button type="submit" class="btn btn-outline-primary  mt-4 ms-3" style="height:fit-content;">Filter</button>
+        </form>
+  
+        <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal">
+            Add Property
+          </button>
+     
+<div class="container bg-light rounded py-1"   id="properties"></div>
+</div>
+<!-- Button trigger modal -->
+  
+  
+</section>
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form  class="d-flex flex-column">
+            <input type="text" name="Apartment_name" id="Apartment_name" placeholder="Apartment name" class="rounded m-2 " style="width:100%; height:5vh;">
+            <input type="text" name="imageUrl" id="imageUrl" placeholder="Image URL"  class="rounded m-2 " style="width:100%; height:5vh;">
+            <input type="text" name="Bedrooms" id="Bedrooms" placeholder="Bedrooms no."  class="rounded m-2 " style="width:100%; height:5vh;">
+            <input type="text" name="Bathrooms" id="Bathrooms" placeholder="Bathrooms no."  class="rounded m-2 " style="width:100%; height:5vh;">
+            <input type="text" name="Garage" id="Garage" placeholder="Garage no."  class="rounded m-2 " style="width:100%; height:5vh;">
+            <input type="text" name="size" id="size" placeholder="Size"  class="rounded m-2 " style="width:100%; height:5vh;">
+            <input type="text" name="MadeIn" id="MadeIn" placeholder="Year Made In"  class="rounded m-2 " style="width:100%; height:5vh;">
+           <select name="Status" id="Status" class="rounded m-2  p-2" style="width: fit-content;">
+           <option value="Rent">Rent</option>
+           <option value="Sale">Sale</option>
+           </select>
+            <button type="submit" class="btn btn-success" id="Addproperty">ADD</button>
+        </form>
+      </div>
+   
+    </div>
+  </div>
+</div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+    <script src="./admin.js"></script>
 </body>
 </html>

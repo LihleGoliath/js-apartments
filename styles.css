@@ -1,4 +1,13 @@
 
+#body{
+    position: relative;
+    overflow-x: hidden;
+    background-image: url(https://picsum.photos/200/300?random=1);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    
+}
 body{
     position: relative;
     overflow-x: hidden;
@@ -6,7 +15,34 @@ body{
 .searcharea{
     position: absolute;
     top:700px;
-   
-   
+
+   left: 25vw;
+
     z-index: 3;
+}
+#container{
+    display: flex;
+    flex-wrap: wrap;
+margin-top: 100px;
+}
+
+#propertiespage{
+    height: max-content;
+   
+    padding: auto;
+    padding-top: 100px;
+}
+#propertiesList{
+    background-color: black;
+    width: 80vw;
+    margin: auto;
+    padding: auto;  
+    padding-bottom: 200px;
+ 
+}
+#properties{
+    background-color: white;
+    height: fit-content;
+    
+    z-index: 200;
 }
