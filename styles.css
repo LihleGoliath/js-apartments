@@ -15,9 +15,7 @@ body{
 .searcharea{
     position: absolute;
     top:700px;
-
    left: 25vw;
-
     z-index: 3;
 }
 #container{
