@@ -221,8 +221,8 @@ function locationFilter(e){
   };
     function SortingBeds (e) {
     const direction = e.target.value;
-    const sorted = items.sort((a, b) => a.bedrooms - b.bathrooms);
-    if (direction === "Max.Bedrooms") {
+    const sorted = items.sort((a, b) => a.bedrooms - b.bedrooms);
+    if (direction === "Asc.Bedrooms") {
       showItems(sorted);
     } else {
       showItems(sorted.reverse());
