@@ -136,18 +136,17 @@ function showItems(item) {
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-     <form onsubmit="EditProperty(${item.property_id})">
-     <input type="text" name="Apartment_name" id="Apartment_name"  placeholder="${item.apartment_name}">
-     <input type="text" name="imgURL"  id ="imageUrl" placeholder="${item.imgURL}">
-     <input type="text" name="Bedrooms"  id="Bedrooms" placeholder="${item.bedrooms}">
-     <input type="text" name="Bathrooms" id="Bathrooms" placeholder="${item.bathrooms}">
-     <input type="text" name="Garage"  id="Garage" placeholder="${item.garage}">
-     <input type="text" name="Price" id="Price" placeholder="${item.Price}">
-     <input type="text" name="Location"  id="Location" placeholder="${item.Location}">
-    <select name="Status"  class="Status"  >
-    <option value="${item.status}">${item.status}</option>
-    <option value="Rent">Rent</option>
-    <option value="Sale">Sale</option>
+     <form onclick="EditProperty(${item.property_id}) ">
+     <input type="text" name="Apartment_name" id="apartment_name${item.property_id}"  placeholder="${item.apartment_name}">
+     <input type="text" name="imgURL"  id ="imageUrl${item.property_id}" placeholder="${item.imgURL}">
+     <input type="text" name="Bedrooms"  id="bedrooms${item.property_id}" placeholder="${item.bedrooms}">
+     <input type="text" name="Bathrooms" id="bathrooms${item.property_id}" placeholder="${item.bathrooms}">
+     <input type="text" name="Garage"  id="garage${item.property_id}" placeholder="${item.garage}">
+     <input type="text" name="Price" id="price${item.property_id}" placeholder="${item.Price}">
+     <input type="text" name="Location"  id="location${item.property_id}" placeholder="${item.Location}">
+    <select name="status${item.property_id}"  class="Status"  >
+    <option value="${item.status}" selected>${item.status}</option>
+    <option value="${item.status.reverse}" selected>${item.status.reverse}</option>
     </select>
     <button type="submit" class="btn btn-outline-primary">Edit</button>
      </form>
@@ -227,18 +226,21 @@ function locationFilter(e){
     } else {
       showItems(sorted.reverse());
     }
-    }
-function EditProperty(id) {
-    let item = items.find(item =>item.property_id === id);
-    
-       item.apartment_name = document.querySelectorAll("#Apartment_name").value;
-       item.imgURL =document.querySelectorAll("#imageUrl").value ;
-       item.bedrooms  = document.querySelectorAll("#Bedrooms").value ;
-       item.bathrooms = document.querySelectorAll("#Bathrooms").value;
-       item.garage  = document.querySelectorAll("#Garage").value;
-       item.Location = document.querySelectorAll("#Location").value;
-       item.Price = document.querySelectorAll("#Price").value;
-       item.status = document.querySelectorAll("#Status").value;  
+    };
+ 
+    function EditProperty(id) {
+      const item = items.find(item => item.property_id===id );
+      console.log(item)
+     
+       item.apartment_name= document.querySelector(`#apartment_name${item.property_id}`).value;
+        item.imgURL =document.querySelector(`#imageUrl${item.property_id}`).value ;
+     item. bedrooms = document.querySelector(`#bedrooms${item.property_id}`).value ;
+      item.bathrooms = document.querySelector(`#bathrooms${item.property_id}`).value;
+      item.garage  = document.querySelector(`#garage${item.property_id}`).value;
+     item. Location = document.querySelector(`#location${item.property_id}`).value;
+      item.Price = document.querySelector(`#price${item.property_id}`).value;
+      item.status = document.querySelector(`#status${item.property_id}`).options[`#status${item.property_id}`.selectedIndex].value;
     localStorage.setItem("items",JSON.stringify(items));
     showItems(items);    
+   
 }

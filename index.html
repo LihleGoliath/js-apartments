@@ -17,45 +17,42 @@
     </div>
 </section>
 <div class="searcharea  mx-auto">
-<form  class="container bg-light shadow p-4 d-flex" style="width: fit-content;" >
-    <div class="row">
-<div  class="col-md-3  col-sm-6">
-    <h6>Location</h6>
-            <select name="location" id="location" class="form-select select-sm me-2" style="width: fit-content;">
-                <option value="All_Cites" >All Cites</option>
-                <option value="New_York" >New York</option>
-                <option value="London" >London</option>
-                <option value="Cape_town" >Cape town</option>
-            </select>
-        </div>
-        <div  class="col-md-3  col-sm-6">
-            <h6>Bedrooms</h6>
-            <select name="bedrooms" id="bedrooms" class="form-select select-sm me-2" style="width: fit-content;">
-                <option value="Bedrooms">Bedrooms</option>
-                <option value="1-5">1-5</option>
-                <option value="5-10">5-10</option>
-                <option value="10-15">10-15</option>
-            </select>
-        </div>
-    <div  class="col-md-3  col-sm-6">
-            <h6>Price</h6>
-            <select name="Price" id="Price" class="form-select select-sm me-2" style="width: fit-content;">
-                <option value="Max.Price">Max.Price</option>
-                <option value="5000">5000</option>
-                <option value="2000">2000</option>
-                <option value="1000">1000</option>
-            </select>
-        </div>
-        <div  class="col-md-3  col-sm-6" >
-            <h6>Status</h6>
-            <select name="Status" id="Status" class="form-select select-sm me-2" style="width: fit-content;">
-                <option value="All-Status">All Status</option>
-                <option value="Rent">Rent</option>
-                <option value="Sale">Sale</option>
-            </select>
-        </div>
-</div> 
-    </form>
+    <form class="container bg-light shadow p-3 d-flex mb-3" style="width: fit-content;height: fit-content;" >
+        <div class="row" style="width: fit-content;">
+            <div class="col-md-3 col-sm-4"  style="width: fit-content;">
+                <h6>Location</h6>
+                        <select onchange="locationFilter(event)" name="location" id="location" class="form-select select-sm me-2" style="width: fit-content;">
+                            <option value="All_Cites" >All Cites</option>
+                            <option value="New York" >New York</option>
+                            <option value="London" >London</option>
+                            <option value="Cape Town" >Cape town</option>
+                        </select>
+                    </div>
+                    <div class="col-md-3  col-sm-4" style="width: fit-content;">
+                        <h6>Bedrooms</h6>
+                        <select onchange="SortingBeds(event)" name="bedrooms" id="bedrooms" class="form-select select-sm me-2" style="width: fit-content;">
+                          <option value="Asc.Bedrooms">Asc.Bedrooms</option>
+                          <option value="Desc.Bedrooms">Desc.Bedrooms</option>
+                        </select>
+                    </div>
+                <div class="col-md-3  col-sm-4" style="width: fit-content;">
+                        <h6>Price</h6>
+                        <select onchange="SortingPrice(event)" name="Price" id="Price" class="form-select select-sm me-2" style="width: fit-content;">
+                            <option value="2000000">Max.Price</option>
+                            <option value="5600">Min.Price</option>
+                          
+                        </select>
+                    </div>
+                    <div class="col-md-3  col-sm-6"  style="width: fit-content;" >
+                        <h6>Status</h6>
+                        <select onchange=" StatusFilter(event)" name="Status" id="Status" class="form-select select-sm me-2" style="width: fit-content;">
+                            <option value="All-Status">All Status</option>
+                            <option value="Rent">Rent</option>
+                            <option value="Sale">Sale</option>
+                        </select>
+                    </div>
+                </div>
+                </form>
     </div>     
     <section id="homes " class="p-5 text-center">
         <div class="container">

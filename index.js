@@ -130,3 +130,40 @@ function DisplayItems(items) {
 }
 
 DisplayItems (items);
+
+
+
+function locationFilter(e){
+    const location = e.target.value;
+    if (location === "All_Cites") {
+      return showItems(items);
+    }
+    const filtered = items.filter((item) => item.Location === location);
+    return showItems(filtered);
+  };
+
+  function SortingPrice (e){
+    const direction = e.target.value;
+    const sorted = items.sort((a, b) => a.Price - b.Price);
+    if (direction === "5600") {
+      showItems(sorted);
+    } else {
+      showItems(sorted.reverse());
+    }
+  };function StatusFilter(e){
+    const status = e.target.value;
+    if (status === "All-Status") {
+      return showItems(items);
+    }
+    const statusfiltered = items.filter((item) => item.status === status);
+    return showItems(statusfiltered);
+  };
+    function SortingBeds (e) {
+    const direction = e.target.value;
+    const sorted = items.sort((a, b) => a.bedrooms - b.bedrooms);
+    if (direction === "Asc.Bedrooms") {
+      showItems(sorted);
+    } else {
+      showItems(sorted.reverse());
+    }
+    }
