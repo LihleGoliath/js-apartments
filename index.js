@@ -136,34 +136,34 @@ DisplayItems (items);
 function locationFilter(e){
     const location = e.target.value;
     if (location === "All_Cites") {
-      return showItems(items);
+      return DisplayItems(items);
     }
     const filtered = items.filter((item) => item.Location === location);
-    return showItems(filtered);
+    return DisplayItems(filtered);
   };
 
   function SortingPrice (e){
     const direction = e.target.value;
     const sorted = items.sort((a, b) => a.Price - b.Price);
     if (direction === "5600") {
-      showItems(sorted);
+        DisplayItems(sorted);
     } else {
-      showItems(sorted.reverse());
+        DisplayItems(sorted.reverse());
     }
   };function StatusFilter(e){
     const status = e.target.value;
     if (status === "All-Status") {
-      return showItems(items);
+      return DisplayItems(items);
     }
     const statusfiltered = items.filter((item) => item.status === status);
-    return showItems(statusfiltered);
+    return DisplayItems(statusfiltered);
   };
     function SortingBeds (e) {
     const direction = e.target.value;
     const sorted = items.sort((a, b) => a.bedrooms - b.bedrooms);
     if (direction === "Asc.Bedrooms") {
-      showItems(sorted);
+      DisplayItems(sorted);
     } else {
-      showItems(sorted.reverse());
+        DisplayItems(sorted.reverse());
     }
     }
