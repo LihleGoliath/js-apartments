@@ -12,6 +12,13 @@ body{
     position: relative;
     overflow-x: hidden;
 }
+
+section#landing{
+    background-image: url(https://cdn.pixabay.com/photo/2016/11/22/19/17/buildings-1850129_960_720.jpg); 
+    background-size:cover; 
+    background-position: center center; 
+    background-repeat:   no-repeat;
+}
 .searcharea{
     position: absolute;
     top:700px;
